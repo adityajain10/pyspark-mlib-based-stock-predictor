@@ -1,6 +1,11 @@
 <?php
-shell_exec("adi.sh");
+// Check if the 'runPrediction' post variable is set, which indicates the button was clicked.
+if (isset($_POST['runPrediction'])) {
+    // Execute the PySpark script using spark-submit
+    shell_exec("spark-submit finalStockPrediction.py");
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <title>PredicatorFinc.</title>
